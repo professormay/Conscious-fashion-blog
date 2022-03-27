@@ -1,0 +1,448 @@
+ html {
+    font-size: 12px;
+    color: #070707;
+  }
+
+  body {
+    font-family: 'Didact Gothic', sans-serif;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  #container{
+    background-color: white;
+    display: grid;
+    max-width: 1200px; 
+    margin: 30px auto;
+    font-family: sans-serif;
+    grid-template-rows: 0.1fr 2fr 0.6fr 2fr 0.1fr;
+    grid-template-columns: 1fr 0fr 1fr 0fr 1fr;
+    grid-gap: 30px;
+  }
+
+  nav {
+    background-color: #dee7e6;
+    grid-row: 1 / 1;
+    grid-column: 1 / -1;
+   
+  }
+
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 17px 25px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  a.active,a:hover{
+    background: #c4d1d1;
+    transition: .5s;
+    border-radius: 15%;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 952px){
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 1067px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 10%;
+      left: 100%;
+      text-align: center;
+      transition: all .5s;
+      z-index: 1000;
+      margin: 8px;
+    }
+    nav ul li{
+      display: block;
+      margin: 120px 10px;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #f0e292;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+
+  /* MENU BUTTON */
+
+  
+
+
+    
+  /* Main image */
+
+  #box-2 {
+    grid-row: 2 / 2;
+    grid-column: 1 / -1;
+    background-image: url(closet.jpg);
+    background-size: cover;
+    padding-top: 10%;   
+  }
+
+
+  
+   /* Title inside the main image */
+
+  .title {
+      font-family: 'Beth Ellen', sans-serif, cursive;
+      font-size: 1.8em;
+      font-weight: 800;
+      text-align: center;
+      color: cornsilk;
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      animation-timing-function: ease-out;
+      letter-spacing: 5px;
+    }
+
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    80% {
+      transform: translateX(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  /*  Text under the title with emoji */
+  .text {
+    font-family: 'Ledger', serif;
+    font-size: 1.8em;
+    animation: moveInRight 1s 1s ease-out;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+  }
+
+
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    80% {
+      transform: translateX(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }  
+
+
+  /* Three photos */
+    
+
+  .btn:link,
+  .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+  }
+
+  .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(85, 64, 64, 0.9);
+  }
+
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px rgba(253, 253, 253, 0.9);
+  }
+
+  .btn-white {
+    background-color: rgba(255, 251, 245, 0.884);
+    color: #777;
+    margin-top: 20%;
+    font-weight: 600;
+  }
+
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  .btn-white::after {
+    background-color: rgba(255, 251, 245);
+  }
+
+  .btn:hover::after {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+  .btn-animated {
+    animation: moveInBottom .5s ease-out 2s;
+    animation-fill-mode: backwards;
+  }
+
+   /* Shirt */
+   #box-4 {
+    grid-row: 3 / 3;
+    grid-column: 1 / 2;
+    background-color:  #e8e8e0;
+    background-image: url(shirt.jpg);
+    background-size: cover;
+    text-align: center;
+  }  
+
+       /* Skirt */
+  #box-5 {
+    grid-row:  3 / 3;
+    grid-column: 3 / 4;
+    background-color:  #e8e8e0;
+    background-image: url(skirt.jpg);
+    background-size: cover;
+    text-align: center;
+  }
+
+       /* A girl */
+  #box-6 {
+    grid-row: 3 / 3;
+    grid-column: 5 / -1;
+    background-color:  #e8e8e0;
+    background-image: url(headscarf.jpg);
+    background-size: cover;
+    text-align: center;
+  }
+
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }  
+  }
+
+    /* Jeans pic */
+   #box-7 {
+      grid-row: 4 / 4;
+      grid-column: 1 / 4;
+     
+    } 
+    .pocket {
+      width: 130%;
+      max-height: 100%;
+      display: block;
+      
+    }
+
+
+
+    /* Text next to Jeans pic */
+  #box-8 { 
+    background-color: #e8e8e0;
+    grid-row: 4 / 4;
+    grid-column: 4 / 6;
+    display: block;
+    font-size: 1.6rem;
+    width: 100%;
+    height: auto;
+  }
+
+  p.box8-text {
+    font-family: 'Didact Gothic', sans-serif;
+    margin: 9%;
+  }
+
+
+    /* Footer */
+  #footer { 
+    background-color: #dee7e6;
+    grid-row: 5 / 5;
+    grid-column: 1 / -1;
+    letter-spacing: 0.2em; 
+  }
+
+ .footer_list {
+   list-style: none;
+   text-transform: uppercase;
+   font-weight: 600;
+   border-top: 1px solid grey;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 2%;
+   padding:3%;
+ }
+
+ .footer_link {
+  text-decoration: none;
+  color: rgb(80, 105, 105);
+  transition: all .2s;
+}
+
+  a:hover,
+  a:active {
+  box-shadow: 0 0.5rem 1rem rgba(14, 9, 9, 0.2);
+ }
+
+
+                    /* MEDIA queries   */
+                    /* MEDIA FOR small PHONES   */
+   @media only screen and (max-width: 800px) {
+    #container{
+      grid-template-rows: 0.1fr 1fr 0.6fr .1fr .1fr .1fr;
+      grid-template-columns: 1fr 0fr 1fr 0fr 1fr;
+      grid-gap: 5px;
+    }
+
+    #footer { 
+      grid-row: 6 / 6;
+      grid-column: 1 / -1;
+    }
+     
+}
+
+  @media only screen and (max-width: 1067px) {
+
+    #container{
+      grid-template-rows: 0.1fr 1fr 0.6fr .1fr .1fr .1fr;
+      grid-template-columns: 1fr 0fr 1fr 0fr 1fr;
+      grid-gap: 5px;
+    }
+
+    #navbar {
+      grid-row: 1 / 1;
+      grid-column: 1 / -1;
+    }
+
+
+    #box-2 {
+        grid-row: 2 / 2;
+        grid-column: 1 / -1;
+      }
+
+    #box-4 {
+        grid-row: 3 / 3;
+        grid-column: 1 / 2;
+      }  
+
+       /* Skirt */
+    #box-5 {
+      grid-row:  3 / 3;
+      grid-column: 3 / 4;
+    }
+
+       /* A girl */
+    #box-6 {
+      grid-row: 3 / 3;
+      grid-column: 5 / -1;
+    }
+
+       /* Jeans pic */
+    #box-7 {
+          grid-row: 4 / 4;
+          grid-column: 1 / -1;
+        }
+        
+        
+      .pocket {
+        width: 100%;
+      }  
+  
+      /* Text next to Jeans pic */
+    #box-8 { 
+      grid-row: 5 / 5;
+      grid-column: 1 / -1;
+    }
+
+    p {
+      font-size: 1.3rem;
+  
+    }
+  
+    #footer { 
+      background-color: #dee7e6;
+      grid-row: 6 / 6;
+      grid-column: 1 / -1; 
+    }
+  
+   .footer_list {
+     list-style: none;
+     text-decoration: none;
+     border-top: 1px solid grey;
+   }
+  
+   .footer_link {
+    text-decoration: none;
+    color: rgb(80, 105, 105);
+    transition: all .2s;
+  }
+  
+    a:hover,
+    a:active {
+    box-shadow: 0 0.5rem 1rem rgba(14, 9, 9, 0.2);
+   }
+
+   .btn-white {
+    background-color: rgba(255, 251, 245, 0.884);
+    color: #777;
+    margin-top: 50%;
+    font-weight: 600;
+  }
+  
+
+  }
+ 
